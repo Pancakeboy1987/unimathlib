@@ -6,7 +6,7 @@ import os
 # Добавляем корень проекта в sys.path, чтобы импорт работал
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from unimathutils.linalg.vector import Vector  # импорт вашего класса
+from unimathutils.linalg.vector import Vector 
 from unimathutils.linalg.matrix import Matrix
 
 from unimathutils.stats.combinatorics import (
@@ -94,7 +94,7 @@ class TestMatrix(unittest.TestCase):
         res = self.m1 * 2
         self.assertEqual(res.data, [2, 4, 6, 12])
 
-        # ---------- Матричное умножение ----------
+        ## Матричное умножение
 
     def test_matrix_matrix_multiplication(self):
         # [1 2]   [5 6]   [19 22]
@@ -191,7 +191,7 @@ class TestBinomialProbability(unittest.TestCase):
 
     def test_binomial_probability_basic(self):
         # P(X=2) for n=4, p=0.5
-        # C(4,2) * 0.5^2 * 0.5^2 = 6 * 0.0625 = 0.375
+
         self.assertAlmostEqual(
             binomial_probability(4, 2, 0.5),
             0.375
