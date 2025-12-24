@@ -27,12 +27,7 @@ class Matrix(Vector):
         return s
 
     def __getitem__(self, index):
-        """
-        Доступ к элементам.
-        Поддерживает два вида индексов:
-        1. m[i] -> возвращает элемент как в плоском векторе (редко нужно)
-        2. m[row, col] -> возвращает элемент по координатам
-        """
+
         if isinstance(index, tuple):
             row, col = index
             if 0 <= row < self.rows and 0 <= col < self.cols:
@@ -45,7 +40,7 @@ class Matrix(Vector):
             return super().__getitem__(index)
 
     def __setitem__(self, index, value):
-        """Запись элементов m[row, col] = value"""
+        #Запись элементов m[row, col] = value
         if isinstance(index, tuple):
             row, col = index
             flat_index = row * self.cols + col
